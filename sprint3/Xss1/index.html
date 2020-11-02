@@ -1,0 +1,13 @@
+<form id="form">
+  Search: <input type="text" name="p1" size="60" value="">
+  <input type="submit" value="Search">
+</form>
+<div id="result"></div>
+
+<script>
+  const SOLUTION = `<img src=x onerror="alert('evil')">`; // Здесь вставьте уязвимую строку из инпута
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    result.innerHTML = event.srcElement[0].value;
+  });
+</script>
